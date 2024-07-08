@@ -1,0 +1,2 @@
+rootProject.name = 'turnstile-state-machine-service'
+include 'integration-test'

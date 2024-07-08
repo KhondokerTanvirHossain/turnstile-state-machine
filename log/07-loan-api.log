@@ -1,0 +1,207 @@
+2024-04-20 20:15:33.586 [main] ERROR o.s.boot.SpringApplication:839 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@7ec3394b - Failed to instantiate converter class [org.tuxdude.logback.extensions.LogColorizer] as a composite converter for keyword [colorize] ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@7ec3394b - Failed to create converter for [%colorize] keyword
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:149)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:137)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:366)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at com.tanvir.MultiTenantApplication.main(MultiTenantApplication.java:10)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@7ec3394b - Failed to instantiate converter class [org.tuxdude.logback.extensions.LogColorizer] as a composite converter for keyword [colorize] ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@7ec3394b - Failed to create converter for [%colorize] keyword
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:277)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 19 common frames omitted
+	Suppressed: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.tuxdude.logback.extensions.LogColorizer
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:69)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:44)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:33)
+		at ch.qos.logback.core.pattern.parser.Compiler.createCompositeConverter(Compiler.java:130)
+		at ch.qos.logback.core.pattern.parser.Compiler.compile(Compiler.java:47)
+		at ch.qos.logback.core.pattern.parser.Parser.compile(Parser.java:87)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:85)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:287)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$1(LogbackLoggingSystem.java:249)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:467)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:244)
+		... 23 common frames omitted
+	Caused by: java.lang.ClassNotFoundException: org.tuxdude.logback.extensions.LogColorizer
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:56)
+		... 46 common frames omitted
+2024-04-20 20:17:18.101 [main] INFO  com.tanvir.MultiTenantApplication:50 - Starting MultiTenantApplication using Java 20.0.2 with PID 906718 (/home/tanvir/Documents/Projects/multi-tenant-service/build/classes/java/main started by tanvir in /home/tanvir/Documents/Projects/multi-tenant-service)
+2024-04-20 20:17:18.103 [main] INFO  com.tanvir.MultiTenantApplication:653 - No active profile set, falling back to 1 default profile: "default"
+2024-04-20 20:17:19.680 [main] INFO  c.t.t.m.MasterRepositoryConnection:35 - Successfully established connection to jdbc:postgresql://localhost:5432/multitenant?currentSchema=master
+2024-04-20 20:17:19.692 [main] INFO  c.t.t.master.MasterRepository:43 - Tenant Oid : a24b3c2d-801c-411a-a701-e4992f06ab2a, Name : Template_Tenant, and Schema : template
+2024-04-20 20:17:19.693 [main] INFO  c.t.t.master.MasterRepository:43 - Tenant Oid : 5861fc2f-fa49-42df-8159-f24f09e25fc6, Name : First_Tenant, and Schema : firsttenant
+2024-04-20 20:17:19.693 [main] INFO  c.t.t.master.MasterRepository:43 - Tenant Oid : 9cd43a87-054e-407c-a193-eb5271fe4016, Name : Second_Tenant, and Schema : secondtenant
+2024-04-20 20:17:19.744 [main] INFO  c.t.t.config.TenantAwareR2dbcConfig:129 - tenantConnectionFactoriesMap : {9cd43a87-054e-407c-a193-eb5271fe4016=ConnectionPool[PostgreSQL]}
+2024-04-20 20:17:19.746 [main] INFO  c.t.t.config.TenantAwareR2dbcConfig:129 - tenantConnectionFactoriesMap : {9cd43a87-054e-407c-a193-eb5271fe4016=ConnectionPool[PostgreSQL], a24b3c2d-801c-411a-a701-e4992f06ab2a=ConnectionPool[PostgreSQL]}
+2024-04-20 20:17:19.748 [main] INFO  c.t.t.config.TenantAwareR2dbcConfig:129 - tenantConnectionFactoriesMap : {9cd43a87-054e-407c-a193-eb5271fe4016=ConnectionPool[PostgreSQL], a24b3c2d-801c-411a-a701-e4992f06ab2a=ConnectionPool[PostgreSQL], 5861fc2f-fa49-42df-8159-f24f09e25fc6=ConnectionPool[PostgreSQL]}
+2024-04-20 20:17:20.230 [main] INFO  o.s.b.a.s.r.ReactiveUserDetailsServiceAutoConfiguration:93 - 
+
+Using generated security password: c788d551-20fc-42d4-9a92-a4ce0870b81a
+
+2024-04-20 20:17:20.688 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver:58 - Exposing 4 endpoint(s) beneath base path '/actuator'
+2024-04-20 20:17:20.969 [main] INFO  o.s.b.w.e.netty.NettyWebServer:141 - Netty started on port 8083
+2024-04-20 20:17:20.983 [main] INFO  com.tanvir.MultiTenantApplication:56 - Started MultiTenantApplication in 3.224 seconds (process running for 3.714)
+2024-04-20 20:17:21.972 [RMI TCP Connection(2)-127.0.0.1] ERROR c.t.t.r.resolver.TenantResolver:40 - Tenant id not found in request !
+2024-04-20 20:17:21.973 [RMI TCP Connection(2)-127.0.0.1] WARN  o.s.b.a.r.ConnectionFactoryHealthIndicator:92 - Health check failed
+com.tanvir.core.util.exception.ExceptionHandlerUtil: Tenant id not found in request !
+	at com.tanvir.tenantmanagement.routingfilter.resolver.TenantResolver.lambda$resolve$1(TenantResolver.java:41)
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:47)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76)
+	at reactor.core.publisher.MonoUsingWhen.subscribe(MonoUsingWhen.java:96)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
+	at reactor.core.publisher.Mono.block(Mono.java:1727)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$AdaptedReactiveHealthContributors$1.getHealth(HealthEndpointConfiguration.java:173)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:803)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2024-04-20 20:17:27.820 [parallel-5] INFO  com.tanvir.core.filters.IWebFilter:46 - Request Received From /[0:0:0:0:0:0:0:1%0]:8083
+ Uri : http://localhost:8083/base/url/api/v1/next-day?instituteOid=MRA-IMS-MFI-Oid-Template&loginId=admin
+ Method : POST
+ Headers : [Content-Type:"application/json", User-Agent:"PostmanRuntime/7.36.1", Accept:"*/*", Cache-Control:"no-cache", Postman-Token:"3fc26db9-f824-46cf-a601-02cc63295793", Host:"localhost:8083", Accept-Encoding:"gzip, deflate, br", Connection:"keep-alive", Content-Length:"67", Request-Received-Time-In-Ms:"2024-04-20T20:17:27.818075456", Trace-Id:"TEST-XXXXXXXXXXXXXXXXXXXXX"]
+ Path : /base/url/api/v1/next-day
+ Query Params : {instituteOid=[MRA-IMS-MFI-Oid-Template], loginId=[admin]}
+ Content type : application/json
+ Acceptable Media Type [*/*]
+
+2024-04-20 20:17:27.824 [parallel-5] ERROR c.t.t.r.f.TenantContextWebFilter:50 - Tenant id not found in request !
+2024-04-20 20:17:27.854 [parallel-5] INFO  com.tanvir.core.filters.IWebFilter:68 - Response Sending To /[0:0:0:0:0:0:0:1%0]:8083
+ Uri : http://localhost:8083/base/url/api/v1/next-day?instituteOid=MRA-IMS-MFI-Oid-Template&loginId=admin
+ Path : /base/url/api/v1/next-day
+ Headers : [transfer-encoding:"chunked", Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Content-Type-Options:"nosniff", X-Frame-Options:"DENY", X-XSS-Protection:"0", Referrer-Policy:"no-referrer", Response-Processing-Time-In-Ms:"34", Response-Sent-Time-In-Ms:"2024-04-20T20:17:27.854312162", Trace-Id:"TEST-XXXXXXXXXXXXXXXXXXXXX"]
+ Response Status : 400 BAD_REQUEST
+ Content type : application/json
+
+2024-04-20 20:17:27.855 [parallel-5] INFO  com.tanvir.core.filters.IWebFilter:83 - Response processing time for /base/url/api/v1/next-day is 34 ms
+2024-04-20 20:17:28.857 [AsyncReporter{org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender@2f11027e}] WARN  z.r.AsyncReporter$BoundedAsyncReporter:310 - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2024-04-20 20:17:28.857 [AsyncReporter{org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender@2f11027e}] WARN  z.r.AsyncReporter$BoundedAsyncReporter:317 - Dropped 5 spans due to WebClientRequestException(Unable to parse url [])
+org.springframework.web.reactive.function.client.WebClientRequestException: Unable to parse url []
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to POST  [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:136)
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at com.tanvir.core.config.HooksConfig$1.onError(HooksConfig.java:41)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at com.tanvir.core.config.HooksConfig$1.onError(HooksConfig.java:41)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at com.tanvir.core.config.HooksConfig$1.onError(HooksConfig.java:41)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at com.tanvir.core.config.HooksConfig$1.onError(HooksConfig.java:41)
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93)
+		at com.tanvir.core.config.HooksConfig$1.onError(HooksConfig.java:41)
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:204)
+		at reactor.core.publisher.Operators.reportThrowInSubscribe(Operators.java:232)
+		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:83)
+		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
+		at reactor.core.publisher.Mono.block(Mono.java:1727)
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:76)
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:54)
+		at zipkin2.Call$Base.execute(Call.java:391)
+		at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+		at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:103)
+		at reactor.core.publisher.Mono.block(Mono.java:1728)
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:76)
+		at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:54)
+		at zipkin2.Call$Base.execute(Call.java:391)
+		at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+		at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.IllegalArgumentException: Unable to parse url []
+	at reactor.netty.http.client.UriEndpointFactory.createUriEndpoint(UriEndpointFactory.java:69)
+	at reactor.netty.http.client.UriEndpointFactory.createUriEndpoint(UriEndpointFactory.java:45)
+	at reactor.netty.http.client.HttpClientConnect$HttpClientHandler.<init>(HttpClientConnect.java:509)
+	at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect.subscribe(HttpClientConnect.java:208)
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76)
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4512)
+	at reactor.core.publisher.Mono.block(Mono.java:1727)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:76)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinWebClientSender$WebClientHttpPostCall.doExecute(ZipkinWebClientSender.java:54)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
